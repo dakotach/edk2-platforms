@@ -498,9 +498,7 @@ PlatformInitPreMem (
   BootMode = BoardBootModeDetect ();
   Status = PeiServicesSetBootMode (BootMode);
   ASSERT_EFI_ERROR (Status);
-  if (BootMode == BOOT_IN_RECOVERY_MODE) {
-    Status = PeiServicesInstallPpi (&mPpiListRecoveryBootMode);
-  }
+
   ///
   /// Signal possible dependent modules that there has been a
   /// final boot mode determination, it is used to build BIST
